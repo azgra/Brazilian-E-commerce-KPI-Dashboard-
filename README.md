@@ -30,9 +30,9 @@ EcomSalesKPIDashboard/
 │   ├── etl\_clean\_derive.sql       # add virtual columns, date dimension, daily fact
 │   └── views\_kpi.sql              # 7 analysis views (GMV, Orders, Returns…)
 ├── tableau/
-│   └── EcomSalesKPIDashboard.twbx # packaged workbook (no password stored)
+│   └── EcomSalesKPIDashboard.twbx # packaged workbook 
 ├── assets/
-│   └── dashboard.png              # static preview for GitHub README
+│   └── dashboard.png             
 └── README.md
 
 ````
@@ -89,11 +89,7 @@ and point every worksheet to the corresponding view.
 ## 6 · Acknowledgements
 
 * [Olist](https://www.olist.com/) for releasing the dataset
-* Tableau Public Community for endless dashboard inspiration
 
 ---
 
 **Thank you for visiting this project.** If you have any questions or suggestions, feel free to open an issue or submit a pull request.
-````
-Raw data
-Download all *olist_* CSVs (≈19 MB) from Kaggle into `data/` before running SQL.
