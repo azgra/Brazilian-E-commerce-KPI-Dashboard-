@@ -12,7 +12,7 @@ ALTER TABLE order_items DROP COLUMN gross_value;
 ------------------------------------------------------------*/
 
 /*------------------------------------------------------------
-1. 派生字段（订单表orders）
+1. orders
 ------------------------------------------------------------*/
 ALTER TABLE orders
 ADD COLUMN order_date  DATE     GENERATED ALWAYS AS (DATE(order_purchase_timestamp)) VIRTUAL,
@@ -23,7 +23,7 @@ ADD COLUMN is_returned TINYINT  GENERATED ALWAYS AS (
 ) VIRTUAL;
 
 /*------------------------------------------------------------
-2. 派生字段（订单项表order_items）
+2. order_items
 ------------------------------------------------------------*/
 ALTER TABLE order_items
 ADD COLUMN gross_value DECIMAL(10,2) GENERATED ALWAYS AS (
@@ -31,7 +31,7 @@ ADD COLUMN gross_value DECIMAL(10,2) GENERATED ALWAYS AS (
 ) VIRTUAL;
 
 /*------------------------------------------------------------
-3. 日期维度表dim_date（存储过程批量插入，确保稳定性）
+3.dim_date
 ------------------------------------------------------------*/
 CREATE TABLE dim_date (
     date_key DATE PRIMARY KEY,
@@ -65,7 +65,7 @@ CALL fill_dim_date();
 DROP PROCEDURE fill_dim_date;
 
 /*------------------------------------------------------------
-4. 日粒度订单事实表fact_order_daily
+4. fact_order_daily
 ------------------------------------------------------------*/
 CREATE TABLE fact_order_daily ENGINE=InnoDB AS
 SELECT
