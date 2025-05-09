@@ -1,9 +1,9 @@
--- views_kpi.sql  (MySQL 8.0+)  — Plan A · 全量 KPI 视图
+-- views_kpi.sql  (MySQL 8.0+)  — Plan A · 
 -- =====================================================================
 USE EcomSalesKPIDashboard;
 
 /*-----------------------------------------------------------
-1️⃣  v_monthly_gmv  — GMV + MoM + YoY（自动补月缺口）
+1️⃣  v_monthly_gmv  — GMV + MoM + YoY
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_monthly_gmv;
 CREATE VIEW v_monthly_gmv AS
@@ -49,7 +49,7 @@ WHERE ym BETWEEN '2016-09-01' AND '2018-08-01'
 ORDER BY ym;
 
 /*-----------------------------------------------------------
-2️⃣  v_monthly_orders  — 订单数 + AOV + MoM
+2️⃣  v_monthly_orders  — Order number + AOV + MoM
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_monthly_orders;
 CREATE VIEW v_monthly_orders AS
@@ -70,7 +70,7 @@ GROUP BY ym
 ORDER BY ym;
 
 /*-----------------------------------------------------------
-3️⃣  v_monthly_return_rate  — 退货率
+3️⃣  v_monthly_return_rate  
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_monthly_return_rate;
 CREATE VIEW v_monthly_return_rate AS
@@ -81,7 +81,7 @@ FROM fact_order_daily
 GROUP BY ym
 ORDER BY ym;
 /*-----------------------------------------------------------
-4️⃣  v_monthly_core_kpi  — 单表汇总 GMV/订单/AOV/退货率/MoM/YoY
+4️⃣  v_monthly_core_kpi  — 单表汇总 GMV/order/AOV/eturn_rate/MoM/YoY
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_monthly_core_kpi;
 CREATE VIEW v_monthly_core_kpi AS
@@ -99,7 +99,7 @@ JOIN   v_monthly_return_rate r USING(ym)
 ORDER  BY g.ym;
 
 /*-----------------------------------------------------------
-5️⃣  v_category_gmv  — 品类 GMV & 订单
+5️⃣  v_category_gmv  — categiry GMV & order
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_category_gmv;
 CREATE VIEW v_category_gmv AS
@@ -116,7 +116,7 @@ LEFT   JOIN product_category_translation pct
 GROUP  BY ym, category_en;
 
 /*-----------------------------------------------------------
-6️⃣  v_state_gmv  — 地区 GMV & 订单
+6️⃣  v_state_gmv  — state  GMV & order
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_state_gmv;
 CREATE VIEW v_state_gmv AS
@@ -131,7 +131,7 @@ JOIN   customers   c USING(customer_id)
 GROUP  BY ym, c.customer_state;
 
 /*-----------------------------------------------------------
-7️⃣  v_customer_segment_monthly  — 新客 vs 回头客
+7️⃣  v_customer_segment_monthly  — new customer vs return customer
 -----------------------------------------------------------*/
 DROP VIEW IF EXISTS v_customer_segment_monthly;
 CREATE VIEW v_customer_segment_monthly AS
